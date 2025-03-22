@@ -29,14 +29,11 @@ public class Solved_Num {
                 System.out.println(current);
                 break;
             }
-
             // 현재 숫자에 a와 b를 붙여서 큐에 추가 (0으로 시작하지 않는 경우만)
             if (!current.startsWith("0")) {
                 queue.add(current + a);
                 queue.add(current + b);
             }
-
-
         }
     }
 }
