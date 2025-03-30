@@ -1,19 +1,16 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
-public class Solved_1260_2 {
+public class Solved_1260_3 {
     static List<ArrayList<Integer>> graph = new ArrayList<>();
     static boolean [] visited;
     public static void main(String [] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-
         String [] buffer = br.readLine().split(" ");
+
         int N = Integer.parseInt(buffer[0]);
         int M = Integer.parseInt(buffer[1]);
         int V = Integer.parseInt(buffer[2]);
@@ -30,13 +27,19 @@ public class Solved_1260_2 {
             graph.get(a).add(b);
             graph.get(b).add(a);
         }
-        visited = new boolean[M];
+
+        for(int i = 0; i<=N; i++){
+            Collections.sort(graph.get(i));
+        }
+
+        visited = new boolean[N+1];
         dfs(graph,V,visited);
         System.out.println();
-        visited = new boolean[M];
+        visited = new boolean[N+1];
         bfs(graph,V,visited);
+
     }
-    private static void dfs(List<ArrayList<Integer>> graph, int start,boolean [] visited){
+    private static void dfs(List<ArrayList<Integer>> graph,int start,boolean [] visited){
         visited[start] = true;
         System.out.print(start + " ");
         for(int a : graph.get(start)){
@@ -45,7 +48,7 @@ public class Solved_1260_2 {
             }
         }
     }
-    private static void bfs(List<ArrayList<Integer>> graph, int start,boolean [] visited){
+    private static void bfs(List<ArrayList<Integer>> graph,int start,boolean [] visited){
         Deque<Integer> deque = new ArrayDeque<>();
         deque.add(start);
         visited[start] = true;
@@ -53,10 +56,10 @@ public class Solved_1260_2 {
         while (!deque.isEmpty()){
             int curr = deque.poll();
             System.out.print(curr + " ");
-            for(int i : graph.get(curr)){
-                if(!visited[i]){
-                    deque.add(i);
-                    visited[i] = true;
+            for(int a : graph.get(curr)){
+                if(!visited[a]){
+                    deque.add(a);
+                    visited[a] = true;
                 }
             }
         }
