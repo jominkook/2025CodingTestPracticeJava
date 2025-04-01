@@ -14,8 +14,10 @@ public class Solved_Num {
         String [] input = br.readLine().split(" ");
         String a = input[0];
         String b = input[1];
+
         queue.add(a);
         queue.add(b);
+
         int K = Integer.parseInt(br.readLine());
         int count = 0; // 몇 번째 숫자인지 카운트
 
@@ -29,6 +31,7 @@ public class Solved_Num {
                 System.out.println(current);
                 break;
             }
+
             // 현재 숫자에 a와 b를 붙여서 큐에 추가 (0으로 시작하지 않는 경우만)
             if (!current.startsWith("0")) {
                 queue.add(current + a);
