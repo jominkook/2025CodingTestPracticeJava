@@ -2,11 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Deque;
 
 public class Solved_2178_4 {
-    static int count = 0;
     static int N,M;
     static int [] dx = {-1,1,0,0};
     static int [] dy = {0,0,-1,1};
@@ -26,15 +24,14 @@ public class Solved_2178_4 {
 
         for(int i = 0; i<N; i++){
             String can = br.readLine();
-            for(int j = 0; j<N; j++){
+            for(int j = 0; j<M; j++){
                 graph[i][j] = can.charAt(j) - '0';
             }
         }
-        System.out.println(bfs(graph,N,M,visited));
+        System.out.println(bfs(graph,0,0,visited));
     }
     private static int bfs(int [][] graph,int x, int y,boolean[][]visited){
         Deque<int[]> deque = new ArrayDeque<>();
-        count += bfs(graph,x,y,visited);
         deque.add(new int[]{x,y});
         visited[x][y] = true;
 
@@ -49,14 +46,14 @@ public class Solved_2178_4 {
                 int ny = curY + dy[i];
 
                 if(nx >=0 && nx < N && ny >= 0 && ny <M){
-                    if(!visited[nx][ny]){
+                    if(graph[nx][ny] == 1 && !visited[nx][ny]){
                         deque.add(new int[]{nx, ny});
+                        graph[nx][ny] = graph[curX][curY] + graph[nx][ny];
                         visited[nx][ny] = true;
                     }
                 }
             }
-
         }
-        return bfs(graph,N-1,M-1,visited);
+        return graph[N-1][M-1];
     }
 }
