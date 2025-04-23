@@ -20,9 +20,9 @@ public class Solved_17266_1 {
         //System.out.println(light);
         int maxDistance = 0;
         if(M == 1){
-            System.out.print(Math.max(light.get(0),N - light.get(0)));
+
         }else {
-            for(int i = 0; i<M; i++){
+            for(int i = 0; i<M; i++){System.out.print(Math.max(light.get(0),N - light.get(0)));
                 if(i == 0){
                     maxDistance = light.get(i);
                 }else if(i == M - 1){
