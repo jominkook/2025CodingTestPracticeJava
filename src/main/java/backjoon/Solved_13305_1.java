@@ -19,8 +19,8 @@ public class Solved_13305_1 {
 
         Long[] liter = new Long[N];
         String[] input2 = br.readLine().split(" ");
-        for (int i = 0; i < N - 1; i++) {
-            dist[i] =  (long)Integer.parseInt(input2[i]);
+        for (int i = 0; i < N ; i++) {
+            liter[i] =  (long)Integer.parseInt(input2[i]);
         }
 
         Long minLiter = liter[0];
