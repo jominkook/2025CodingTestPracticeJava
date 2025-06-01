@@ -1,30 +1,29 @@
 package programmers;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
 
-//Deque를 자유자재로 써야함
-public class MakeTheBiggestNumber {
+import java.util.Stack;
+
+public class MaketheBiggestNumber_3 {
     public String solution(String number, int k) {
         String answer = "";
 
-        Deque<Character> deque = new ArrayDeque<>();
+        Stack<Character> stack = new Stack<>();
 
         for(char a : number.toCharArray()){
-            while(!deque.isEmpty() && k > 0 && deque.peekLast() < a){
-                deque.pollLast();
+            while(!stack.isEmpty() && k > 0 && stack.peek() < a){
+                stack.pop();
                 k--;
             }
-            deque.addLast(a);
+            stack.push(a);
         }
 
         while(k-- > 0){
-            deque.pollLast();
+            stack.pop();
         }
 
         //System.out.println(deque);
         StringBuilder sb = new StringBuilder();
-        for(char c : deque){
+        for(char c : stack){
             sb.append(c);
         }
         answer += sb;
