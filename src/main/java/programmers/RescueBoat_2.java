@@ -1,8 +1,6 @@
 package programmers;
 
-import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.Deque;
 
 public class RescueBoat_2 {
     public int solution(int[] people, int limit) {
