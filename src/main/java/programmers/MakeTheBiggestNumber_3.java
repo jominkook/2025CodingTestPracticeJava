@@ -3,7 +3,7 @@ package programmers;
 
 import java.util.Stack;
 
-public class MaketheBiggestNumber_3 {
+public class MakeTheBiggestNumber_3 {
     public String solution(String number, int k) {
         String answer = "";
 
