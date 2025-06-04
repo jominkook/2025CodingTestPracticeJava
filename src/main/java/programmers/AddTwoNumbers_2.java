@@ -24,9 +24,6 @@ public class AddTwoNumbers_2 {
         Arrays.sort(answer);
 
 
-
-
-
         //System.out.println(queue);
         return answer;
     }
