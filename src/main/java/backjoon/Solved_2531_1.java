@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.Set;
 
+//시간초과남...
 public class Solved_2531_1 {
     public static void main(String [] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,7 +21,7 @@ public class Solved_2531_1 {
 
         int c = Integer.parseInt(buffer[3]);
 
-        int [] sushi = new int[N + k];
+        int [] sushi = new int[N+k-1];
 
         for(int i = 0; i<N; i++){
             sushi[i] = Integer.parseInt(br.readLine());
