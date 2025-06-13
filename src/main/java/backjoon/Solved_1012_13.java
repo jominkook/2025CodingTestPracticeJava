@@ -40,7 +40,6 @@ public class Solved_1012_13 {
                     if(graph[j][k] == 1 && !visited[j][k]){
                         dfs(j,k,N,M);
                         count ++;
-
                     }
                 }
             }
