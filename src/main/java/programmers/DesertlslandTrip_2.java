@@ -57,7 +57,7 @@ public class DesertlslandTrip_2 {
                 }
             }
         }
-        
+
         if(list.isEmpty()){
             list.add(-1);
         }else{
