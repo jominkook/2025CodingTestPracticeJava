@@ -54,7 +54,6 @@ public class Solved_2531_4 {
             max = Math.max(max,result);
             start++;
         }
-
         System.out.println(max);
     }
 }
