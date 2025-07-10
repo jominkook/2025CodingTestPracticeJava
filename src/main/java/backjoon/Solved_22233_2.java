@@ -28,6 +28,5 @@ public class Solved_22233_2 {
             System.out.println(set.size());
         }
 
-
     }
 }
