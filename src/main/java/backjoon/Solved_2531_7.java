@@ -1,10 +1,8 @@
 package backjoon;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
-public class Solved_2531_6 {
+public class Solved_2531_7 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -43,7 +41,6 @@ public class Solved_2531_6 {
         int end = k;
 
         for(int i = end; i<sushi.length; i++){
-
             if(eaten[sushi[start]] == 1){
                 answer -= 1;
             }

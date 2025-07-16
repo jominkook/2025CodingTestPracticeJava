@@ -14,7 +14,6 @@ public class Solved_1436_2 {
 
         while(true){
             String s = String.valueOf(num);
-
             if(s.contains("666")){
                 count++;
                 if(count == N){

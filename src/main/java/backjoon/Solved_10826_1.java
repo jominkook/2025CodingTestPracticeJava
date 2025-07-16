@@ -5,7 +5,7 @@ import java.util.Scanner;
 //파이썬으로 결과 제출시 오류안남
 //현재 틀린 코드..
 
-public class Sovled_10826_1 {
+public class Solved_10826_1 {
     public static void main(String [] args){
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();

@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Sovled_1012_10 {
+public class Solved_1012_10 {
     public static int count = 0;
     public static int [][] graph;
     public static boolean [][] visited;
