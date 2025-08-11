@@ -30,6 +30,7 @@ public class Solved_21921_11 {
         int count = 1;
 
         if(max == 0){
+
             System.out.println("SAD");
             System.exit(0);
         }else{
