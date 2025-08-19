@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Solved_2531_12 {
-    public static void main(String[] args) throws IOException {
+public class Solved_2531_13 {
+    public static void main(String [] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String [] buffer = br.readLine().split(" ");
@@ -15,47 +15,49 @@ public class Solved_2531_12 {
         int k = Integer.parseInt(buffer[2]);
         int c = Integer.parseInt(buffer[3]);
 
-        int [] sushi = new int[n+c-1];
+        int [] sushi = new int[n+k-1];
 
-        for(int i = 0; i<sushi.length; i++){
+
+        for(int i = 0; i < n; i++){
             sushi[i] = Integer.parseInt(br.readLine());
         }
+
+
+        int max = 1;
+        int [] eaten = new int[d+1];
+        eaten[c] = eaten[c] + 1;
+
+        int start = 0;
 
         for(int i = 0; i<k-1; i++){
             sushi[n++] = sushi[i];
         }
 
-        int [] dp = new int[d+1];
-
-        int max = 1;
-
-        dp[c] = dp[c] + 1;
-
-        int start = 0;
 
         for(int i = start; i<k; i++){
-            if(dp[sushi[i]] == 0){
+            if(eaten[sushi[i]] == 0){
                 max++;
             }
-            dp[sushi[i]] = dp[sushi[i]]+1;
+            eaten[sushi[i]] =  eaten[sushi[i]]+1;
         }
-
         start = 0;
         int result = max;
         int end = k;
 
         for(int i = end; i<sushi.length; i++){
-            dp[sushi[start]] -= 1;
+            eaten[sushi[start]] -= 1;
 
-            if(dp[sushi[start]] == 0){
+            if(eaten[sushi[start]] == 0){
                 result -= 1;
             }
-            if(dp[sushi[i]] == 0){
+            if(eaten[sushi[i]] == 0){
                 result +=1;
             }
-            dp[sushi[i]] +=1;
+            eaten[sushi[i]] +=1;
             max = Math.max(max,result);
             start++;
         }
+        System.out.println(max);
+
     }
 }
