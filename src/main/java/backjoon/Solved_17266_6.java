@@ -22,7 +22,7 @@ public class Solved_17266_6 {
         int maxDistance = 0;
 
         if(M == 1){
-            System.out.println(Math.max(N - lights[0], maxDistance));
+            System.out.println(Math.max(N - lights[0], lights[0]));
         }else{
             for(int i = 0; i < M; i++){
                 if(i == 0){
