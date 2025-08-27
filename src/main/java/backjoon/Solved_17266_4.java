@@ -27,6 +27,7 @@ public class Solved_17266_4 {
             for(int i = 0; i < M; i++){
                 if(i == 0){
                     maxDistance = lights[i];
+//                    maxDistance = lights[i];
                 }else if(i == M-1){
                     maxDistance = Math.max(maxDistance,N - lights[i]);
                 }else{
