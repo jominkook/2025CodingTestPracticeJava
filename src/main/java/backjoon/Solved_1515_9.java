@@ -38,7 +38,6 @@ public class Solved_1515_9 {
             }
         }
         System.out.println(i);
-
     }
 }
 
