@@ -9,7 +9,6 @@ public class Solved_17266_9 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
-
         int M = Integer.parseInt(br.readLine());
 
         int [] lights = new int[M];
@@ -18,31 +17,27 @@ public class Solved_17266_9 {
         for(int i = 0; i < M; i++){
             lights[i] = Integer.parseInt(buffer[i]);
         }
-
-        int start = 0;
         int maxDistance = 0;
-        if(M == 1){
+        if(M == 1) {
             System.out.println(Math.max(lights[0], N - lights[0]));
-        }else {
-            for(int i = start; i < M; i++){
 
+        }else{
+            for(int i = 0; i<M; i++){
                 if(i == 0){
                     maxDistance = lights[i];
-                }else if(i == M -1){
+                }else if(i == M-1){
                     maxDistance = Math.max(maxDistance, N - lights[i]);
-                }else{
+                }else {
                     int distance = lights[i] - lights[i-1];
-
                     if(distance % 2 == 0){
-                        maxDistance = distance/2;
-                    }else {
-                        maxDistance = distance/2+1;
+                        distance = distance / 2;
+                    }else{
+                        distance = distance / 2 + 1;
                     }
                     maxDistance = Math.max(maxDistance,distance);
                 }
             }
             System.out.println(maxDistance);
         }
-
     }
 }
