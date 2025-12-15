@@ -50,6 +50,7 @@ public class Solved_2531_16 {
         for(int i = end; i<sushi.length; i++){
             eaten[sushi[start]] = eaten[sushi[start]] - 1;
 
+
             if(eaten[sushi[start]] == 0){
                 result -= 1;
             }
