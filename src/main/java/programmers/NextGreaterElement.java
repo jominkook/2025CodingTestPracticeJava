@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.*;
 
-class Solution {
+class NextGreaterElement {
     public int[] solution(int[] numbers) {
         int [] answer = new int [numbers.length];
 
